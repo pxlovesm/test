@@ -1,13 +1,18 @@
-const express = require('express')
-const helmet = require('helmet')
+const Express = require("express");
+const BodyParser = require("body-parser");
+const MongoClient = require("mongodb").ObjectID;
+const ObjectId = require("mongodb").ObjectID;
 
-const app = express()
+var app = Express();
 
-// add some security-related headers to the response
-app.use(helmet())
+app.use(BodyParser.json());
+app.use(BodyParser.urlencoded({ extended: true}));
 
-app.get('/', function(req, res) {
-    res.send('Hello,this is the root of our servicel')
-})
+//api test
+app.get("/hi",(request,response) =>{
+	response.send("Hello world!");
+});
 
-module.exports = app
+
+//this last line is required by zeit since we are stateless
+module.exports = app;
