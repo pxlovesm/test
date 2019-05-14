@@ -1,13 +1,18 @@
-const express = require('express')
-const helmet = require('helmet')
-
-const app = express()
-
-// add some security-related headers to the response
-app.use(helmet())
-
-app.get('/', function(req, res) {
-    res.send('Hello,this is the root of our servicel')
-})
-
-module.exports = app
+{
+	"name":"MongoDB-API",
+	"version":"1.0.0",
+	"description":"",
+	"main":"index.js",
+	"scripts":{
+		"test":"echo\"Error: no test specified\" && exit 1",
+		"start":"node index.js"
+	}.
+	"keywords":[],
+	"author":"",
+	"license":"ISC",
+	"dependencies":{
+		"body-parser":"^1.19.0",
+		"express":"^4.16.4",
+		"mongodb":"^3.2.4"
+	}
+}
